@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css_006_pseudo.html</title>
+    <style>
+      /* 하이퍼링크의 색상을 레드로 */
+      a:link {
+        color: red;
+      }
+
+      /* 한번이라도 다녀온 사이트의 하이퍼링크면 그린으로 !반드시 액티브와 후버보다 앞에서 작성할 것 */
+      a:visited {
+        color: green;
+      }
+
+      /* 하이퍼링크를 클릭할때(활성화할때) 파란색으로 */
+      a:active {
+        color: blue;
+      }
+
+      /* 하이퍼링크 위에 마우스오버 했을때 색상을 핫핑크로 */
+      a:hover {
+        color: hotpink;
+      }
+
+      /* pseudo class 을 작성할 때
+        :link - :visited - :hover - :active 순서로 작성한다. */
+    </style>
+  </head>
+  <body>
+    <a href="http://www.w3schools.com">w3schools</a>
+  </body>
+</html>
