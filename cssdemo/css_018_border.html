@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css_018_border.html</title>
+    <style>
+      .dv1 {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        border-width: 10px;
+        border-style: solid;
+        border-color: black;
+      }
+
+      .dv2 {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        border-bottom-width: 20px;
+        border-bottom-style: dotted;
+        border-bottom-color: aqua;
+      }
+
+      .dv3 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+
+        /* 12시부터 시계방향으로 설정 (top right bottom left) */
+        border-width: 5px 10px 15px 20px;
+
+        /* 3개 값을 지정하면 (top right/left bottom) */
+        border-style: solid dotted dashed;
+
+        /* 2개 값을 지정하면 (top/bottom right/left) */
+        border-color: black aqua;
+      }
+
+      /* border: border-width, border-style (required), border-color 
+        If border-color is omitted, the color applied will be the color of the text. */
+      /* border-style: none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset|initial|inherit; */
+      .dv4 {
+        width: 100px;
+        height: 100px;
+        background-color: blueviolet;
+        border: 3px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="dv1"></div>
+      <div class="dv2"></div>
+      <div class="dv3"></div>
+      <div class="dv4"></div>
+    </div>
+  </body>
+</html>

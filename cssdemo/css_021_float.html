@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css_021_float.html</title>
+    <style>
+      /* 
+        float
+        1. float는 박스의 위치를 부모요소의 안에서 왼쪽 또는 오른쪽 이동시키는 기능이다.
+        2. float가 지정된 박스는 문서의 일반적인 흐름에 영향을 받지 않으면서 이동된 위치에 떠 있다.
+        */
+
+      .wrap {
+        background-color: gray;
+      }
+
+      div.wrap div {
+        width: 100px;
+        height: 100px;
+      }
+
+      .box1 {
+        background-color: red;
+        float: left;
+      }
+
+      .box2 {
+        background-color: green;
+        float: left;
+      }
+
+      .box3 {
+        background-color: blue;
+        float: right;
+      }
+
+      div.wrap p {
+        clear: both; /* float 해제 */
+      }
+
+      img {
+        float: left;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="box1"></div>
+      <div class="box2"></div>
+      <div class="box3"></div>
+      <p>inline</p>
+    </div>
+
+    <div class="other" style="background-color: yellow; height: 500px">
+      <img src="images/gosu.jpg" alt="고수 영화배우" />
+      <p>
+        테워드로스 아드하놈 거브러여수스 세계보건기구(WHO) 사무총장이 코로나19
+        팬데믹 종식 시점이 멀지 않았다는 의견을 제시했다. 15일
+        니혼게이자이신문(닛케이) 등 외신에 따르면 테워드로스 사무총장은 이날
+        기자회견에서 코로나19 팬데믹에 대해 “끝이 보이기 시작했다”고 말했다.
+        최근 1주일간 보고된 사망자 수가 지난해 3월 WHO가 팬데믹을 선언한 이후
+        가장 적었던 것을 근거로 꼽았다. WHO가 공개한 코로나19 주간 동향 보고서에
+        따르면 지난 5∼11일 세계 코로나19 관련 사망은 전주 대비 22% 감소한
+        1만935건이다. 같은 시기 신규 확진은 28% 줄어든 313만975건을 기록했다.
+        테워드로스 사무총장은 “팬데믹 시작 이후 가장 좋은 상황이 됐다. 아직
+        (종식에) 도착하지 않았지만, 끝이 보이기 시작했다. 하지만 골인 지점이
+        보인다고 해서 달리는 것을 멈추는 마라톤 선수는 없다”고 말했다. 또
+        “중증화 환자를 대상으로 한 백신 접종률을 100%로 유지하는 등 방역 대책을
+        풀지 말아야 한다”고 당부했다.
+      </p>
+    </div>
+  </body>
+</html>
