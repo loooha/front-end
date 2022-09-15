@@ -11,9 +11,15 @@
         padding: 0;
         border-width: 0;
       }
-      body {
+      /* body {
         margin-left: 10px;
+      } */
+
+      body div.wrap {
+        width: 1208px;
+        margin: 10px auto; /* top/bottom    right/left */
       }
+
       h1 {
         width: 0;
         height: 0;
@@ -24,15 +30,14 @@
       ul.mainMenu {
         width: 1208px;
         height: 104px;
-        background-color: yellow;
+        /* background-color: yellow; */
         border-left: 2px solid;
+        list-style-type: none;
       }
 
       ul.mainMenu li {
         border: 2px solid;
         float: left;
-        width: 300px;
-        height: 100px;
         border-left-width: 0;
       }
 
@@ -40,6 +45,40 @@
         display: block;
         width: 300px;
         height: 100px;
+        text-indent: -2000px; /* 인라인요소는 내여쓰기로 글씨가 안보이게 하는게 적용이 안됨 */
+      }
+
+      ul.mainMenu li.mail a {
+        background-image: url(images/mail.gif);
+      }
+
+      ul.mainMenu li.cafe a {
+        background-image: url(images/cafe.gif);
+      }
+
+      ul.mainMenu li.blog a {
+        background-image: url(images/blog.gif);
+      }
+
+      ul.mainMenu li.kin a {
+        background-image: url(images/kin.gif);
+      }
+
+      ul.mainMenu li.mail a:hover {
+        background-position: right bottom;
+        /* 300px 0px; 수평으로 된 이미지기때문에 오른쪽 아래를 맞춰줘도 픽셀로 이동한것과 같은 효과*/
+      }
+
+      ul.mainMenu li.cafe a:hover {
+        background-position: right bottom;
+      }
+
+      ul.mainMenu li.blog a:hover {
+        background-position: right bottom;
+      }
+
+      ul.mainMenu li.kin a:hover {
+        background-position: right bottom;
       }
     </style>
   </head>
