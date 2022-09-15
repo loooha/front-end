@@ -50,6 +50,8 @@
 
       ul.mainMenu li.mail a {
         background-image: url(images/mail.gif);
+        /* background-repeat: no-repeat; 
+        포지션에서 이동할때 -값을 주는게 맞지만 repeat 값에 의히서 +값을 줘도 다시 넘어옴 */
       }
 
       ul.mainMenu li.cafe a {
@@ -65,7 +67,7 @@
       }
 
       ul.mainMenu li.mail a:hover {
-        background-position: right bottom;
+        background-position: -300px 0px;
         /* 300px 0px; 수평으로 된 이미지기때문에 오른쪽 아래를 맞춰줘도 픽셀로 이동한것과 같은 효과*/
       }
 
