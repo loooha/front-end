@@ -18,6 +18,42 @@
       }
 
       .menulist {
+        width: 294px;
+        height: 34px;
+        background-color: yellow;
+        border-left: 2px solid;
+      }
+
+      dl.menulist dt {
+        width: 0;
+        height: 0;
+        font-size: 0;
+        text-indent: -2000px;
+      }
+
+      dl.menulist dd {
+        border: 2px solid;
+        float: left;
+        border-left-width: 0;
+      }
+
+      dl.menulist dd a {
+        display: block;
+        width: 96px;
+        height: 30px;
+        text-align: center;
+        /* line-height: 30px; 아래 font에서 30px을 지정해서 필요없어짐 */
+        text-decoration: none;
+        font: bold 16px/30px nanumgothic, "굴림체", dotum, sant-serif;
+      }
+
+      dl.menulist dd a:hover {
+        text-decoration: underline;
+        font-size: 20px;
+        font-weight: bolder;
+        letter-spacing: 0px;
+        background-color: black;
+        color: white;
       }
     </style>
   </head>
