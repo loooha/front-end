@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js009_datatype.html</title>
+  </head>
+  <body>
+    <script>
+      //datatype : primitive datatype(기본 데이터 타입), refernce datatype(참조데이터 타입)
+
+      //let num = 3;
+      // typeof(num)
+      //console.log(typeof num); //number (숫자)  console.log(num+2);  3+2=5
+
+      let num = "3";
+      console.log(typeof num); //string (문자)
+      console.log(num); //3 :출력은 3이지만 "(따옴표)"로 묶으면 문자, 묶지 않으면 숫자
+      //console.log(num+2);  3+2=32  '3'을 문자 취급
+
+      let avg = 4.5;
+      console.log(`avg=${avg}, ${typeof avg}`); //avg=4.5, number
+
+      let check = true;
+      console.log(`check=${check}, ${typeof check}`); //check=true, boolean
+
+      let data = "javascript";
+      console.log(`data=${data}, ${typeof data}`); //data=javascript, string
+
+      let na = undefined;
+      console.log(`na=${na}, ${typeof na}`); //na=undefined, undefined
+
+      let name = null;
+      console.log(`name=${name}, ${typeof name}`); //name=null, object
+
+      let loc = new String("node");
+      console.log(`loc=${loc}, ${typeof loc}`); //loc=node, object
+      console.log(`loc=${loc instanceof String}`); //loc=true
+
+      let jumsu = new Number(10);
+      console.log(`jumsu=${jumsu}, ${typeof jumsu}`); //jumsu=10, object
+      console.log(`jumsu=${jumsu instanceof Number}`); //jumsu=true
+
+      //변수의 값으로 사용되는 함수는 익명함수로 정의한다.
+      let fn = function () {
+        console.log(`function`);
+      };
+
+      console.log(`fn=${fn}, ${typeof fn}`); // fn=function () {console.log(`function`);}, function
+
+      //중괄호와 대괄호 주의할것.
+      let arr = [1, 2, 3];
+      console.log(`arr=${arr}, ${typeof arr}`); //arr=1,2,3, object
+      console.log(`arr=${arr instanceof Array}`); //arr=true
+
+      let customet = { name: "홍길동", age: 30 };
+      console.log(`customet=${customet}, ${typeof customet}`); //customet=[object Object], object
+      console.log(`customet=${customet instanceof Object}`); //customet=true
+
+      console.log(`${customet.name}, ${customet.age}`); //홍길동, 30
+    </script>
+  </body>
+</html>

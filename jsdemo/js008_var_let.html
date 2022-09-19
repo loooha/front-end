@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js008_var_let.html</title>
+  </head>
+  <body>
+    <script>
+      let bar = 1;
+      {
+        console.log(bar);
+        // 원칙적으로는 let을 선언해도 hoisting이 발생함, hoisting 이 발생되지 않았으면 결과값이 1로 나와야 함.
+        // Uncaught ReferenceError: Cannot access 'bar' before initialization
+        // 초기화단계로 가기전에 '일시적 사각지대'에 빠져있는 상태이기때문에 접근할수 없는 상태가 되어 있는 것.
+        let bar = 2;
+      }
+
+      process();
+      display();
+
+      function process() {
+        //함수선언문
+        console.log(`process`);
+      }
+
+      var display = function () {
+        //함수표현식
+        console.log(`display`);
+      };
+    </script>
+  </body>
+</html>
