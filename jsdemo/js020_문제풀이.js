@@ -5,9 +5,14 @@
   [실행결과]
    10
  */
-
 let num = -10;
+if (num % 10 == 0) {
+  console.log(`1`);
+} else {
+  console.log(`0`);
+}
 
+console.log(`==========================`);
 /*
      [문제2]
    1  사과를 담는데 필요한 바구니의 수를 구하는 코드이다. 
@@ -17,7 +22,49 @@ let num = -10;
    3  [실행결과]
        필요한 바구니의 수 : 13
     */
+let apple = 123;
+switch (apple / 10) {
+  case 1:
+    console.log(`1`);
+  case 2:
+    console.log(`2`);
+    break;
+  case 3:
+    console.log(`B`);
+    break;
+  case 4:
+    console.log(`4`);
+    break;
+  case 5:
+    console.log(`5`);
+    break;
+  case 6:
+    console.log(`6`);
+    break;
+  case 7:
+    console.log(`7`);
+    break;
+  case 8:
+    console.log(`8`);
+    break;
+  case 9:
+    console.log(`9`);
+    break;
+  case 10:
+    console.log(`10`);
+    break;
+  case 11:
+    console.log(`11`);
+    break;
+  case 12:
+    console.log(`12`);
+    break;
+  default:
+    console.log(`13`);
+    break;
+}
 
+console.log(`==========================`);
 /*
      [문제3]
      switch~case문을 이용해서 차량5부제 프로그램을 구현하시오.
@@ -57,3 +104,9 @@ let num = -10;
     *  x=2, y=2
     *  x=5, y=0
     */
+movei: for (let x = 0; x <= 10; x++) {
+  for (let y = 0; y <= 10; y++) {
+    console.log(`x=${x}, y=${y}`);
+    if (2 * x + 3 * y == 10) break movei;
+  }
+}
