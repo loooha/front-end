@@ -119,6 +119,7 @@
 > - var키워드로 선언한 변수는 런타임 이전에 선언 단계와 초기화 단계가 같이 실행된다.
 > - let, const 키워드는 선언한 변수는 선언단계와 초기화 단계가 분리되어 진행된다.
 > - 해당코드가 실행되기 전까지는 초기화가 되지 않아 일시적 사각지대에 빠져 호이스팅이 일어나지 않는 것처럼 보인다. (Reference Errer)
+>   ![git sheat sheet](img/referenceerrer.png)
 
 ---
 
@@ -140,6 +141,7 @@
 <script defer type="text/javascript" src="js/b.js"></script>
 ```
 
+![git sheat sheet](img/defer.png)
 <br>
 
 ### 자바스크립트 출력기호
@@ -299,3 +301,7 @@ let count = 1000;
 let res = member ? (glade == "VIP" ? 0.3 : 0.2) : 0.02;
 console.log(res * count);
 ```
+
+---
+
+20220919 정리완료/ js014_operator.html 까지
