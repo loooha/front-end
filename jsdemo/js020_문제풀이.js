@@ -3,7 +3,7 @@
   num변수의 값이 10의 배수이면 1을 아니면 0을 
    리턴하는 프로그램을 구현하시오.
   [실행결과]
-   10
+   1
  */
 let num = -10;
 if (num % 10 == 0) {
@@ -22,7 +22,13 @@ console.log(`==========================`);
    3  [실행결과]
        필요한 바구니의 수 : 13
     */
-let apple = 123;
+for (let apple = 0; apple <= 123; apple++) {
+  for (let basket = 0; 10 * apple == basket; basket++) {
+    console.log(`필요한 바구니의 수: ${basket}`);
+  }
+}
+
+/*let apple = 123;
 switch (apple / 10) {
   case 1:
     console.log(`1`);
@@ -30,7 +36,7 @@ switch (apple / 10) {
     console.log(`2`);
     break;
   case 3:
-    console.log(`B`);
+    console.log(`3`);
     break;
   case 4:
     console.log(`4`);
@@ -62,7 +68,7 @@ switch (apple / 10) {
   default:
     console.log(`13`);
     break;
-}
+}*/
 
 console.log(`==========================`);
 /*
@@ -81,7 +87,32 @@ console.log(`==========================`);
             차량번호의 끝자리가 5인 차량은 금요일 운행을 제한합니다.
      
     */
+let car = 5;
+let week = ``;
+switch (car % 5) {
+  case 1:
+  case 6:
+    week = `월요일`;
+    break;
+  case 2:
+  case 7:
+    week = `화요일`;
+    break;
+  case 3:
+  case 8:
+    week = `수요일`;
+    break;
+  case 4:
+  case 9:
+    week = `목요일`;
+    break;
+  case 5:
+  case 0:
+    week = `금요일`;
+}
+console.log(`차량번호의 끝자리가 ${car}인 차량은 ${week} 운행을 제한합니다.`);
 
+console.log(`==========================`);
 /*
     [문제4] 
      2001부터 2012년사이에서 윤년을 구하시오.
@@ -94,7 +125,16 @@ console.log(`==========================`);
      2008
      2012
     */
+for (let year = 2001; year <= 2012; year++) {
+  if (year % 4 === 0 && year % 100 !== 0) {
+    console.log(`${year}`);
+    if (year % 400 === 0) {
+      console.log(`${year}`);
+    }
+  }
+}
 
+console.log(`==========================`);
 /*  
     [문제5]
     * 1 10=2x+3y의 해를 구하시오.
@@ -104,9 +144,10 @@ console.log(`==========================`);
     *  x=2, y=2
     *  x=5, y=0
     */
-movei: for (let x = 0; x <= 10; x++) {
+for (let x = 0; x <= 10; x++) {
   for (let y = 0; y <= 10; y++) {
-    console.log(`x=${x}, y=${y}`);
-    if (2 * x + 3 * y == 10) break movei;
+    if (2 * x + 3 * y === 10) {
+      console.log(`x=${x}, y=${y}`);
+    }
   }
 }
