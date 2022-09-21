@@ -25,4 +25,6 @@ for (let value of obj) {
 /*
  for ~ of 문은 반복 가능한 객체 (Array, String, Map, Set, arguments)를 반복하는 객체
  즉, iterable 속성을 가진 객체만 가능
+ 
+ https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Errors/is_not_iterable
 */
