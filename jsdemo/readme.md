@@ -463,17 +463,20 @@ console.log(`${year}년도의 태생은 ${animal}띠입니다.`);
 
 ### 반복문
 
-: for문은 조건식을 만족할 때까지 특정 실행문을 반복해서 실행한다. <br>
-: for <br>
-: while <br>
-: do~while <br>
-: for~in <br>
-: for~of <br>
-: 중첩반복문 - 반복문 안에 반복문 사용도 가능하다.
+- for : for문은 조건식을 만족할 때까지 특정 실행문을 반복해서 실행한다.
+- while : while 문은 조건식을 생략할 수 없다, 조건식을 생략할 수 없기때문에 조건식안에 true 혹은 1을 넣기도 한다.
+- do~while : while문은 한번도 실행이 안될수 있지만, do~while문은 적어도 한번은 반드시 실행된다.
+- for~in : index를 가져온다.
+- for~of : element를 가져온다.
+  - for ~ of 문은 반복 가능한 객체 (Array, String, Map, Set, arguments)를 반복하는 객체. 즉, iterable 속성을 가진 객체만 가능
+  - 참조> https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Errors/is_not_iterable
+- 중첩반복문 : 반복문 안에 반복문 사용도 가능하다.
+  <br>
+  <br>
 
-- continue : 반복문에서 continue를 만나면 증감식으로 이동한다. (아래의 실행문은 무시)
+* continue : 반복문에서 continue를 만나면 증감식으로 이동한다. (아래의 실행문은 무시) <br>
   continue 문은 현재 또는 레이블이 지정된 루프의 현재 반복에서 명령문의 실행을 종료하고 반복문의 처음으로 돌아가여 루프문의 다음 코드를 실행합니다.
-- lable : 사용할 반복문 앞에 선언하여 반복문을 바로 끝냅니다.
+* lable : 사용할 반복문 앞에 선언하여 반복문을 바로 끝냅니다.
 
 ```javascript
 // for문
@@ -502,6 +505,35 @@ for (let i = 1; i <= 10; i++) {
 }
 console.log(`짝수:${even}`);
 console.log(`홀수:${odd}`);
+
+//while문
+while(조건식){
+    실행문;
+}
+
+//while문 예제
+let j = 1;
+while (j <= 5) {
+  console.log(j);
+  j++;
+}
+
+//do~while문
+do{
+    실행문;
+}while(조건식);
+
+//for~in 예제 : 결과값 = 0 1 2 3 4 5
+let subject = "script";
+for (let idx in subject) {
+  console.log(idx);
+}
+
+//for~of 예제 : 결과값 = s c r i p t
+let subject = "script";
+for (let element of subject) {
+  console.log(element);
+}
 
 //중첩반복문
  for(초기값; 조건식; 증감식){
@@ -567,4 +599,202 @@ for (let i = 1; i <= 3; i++) {
 
 ---
 
-20220920 js019_while.js 까지완료
+## 함수 (Function)
+
+:특정기능을 하는 구문을 독립된 부품으로 만들어 재사용하고자 할때 사용하는 문법이다.
+
+### 함수 정의
+
+1. 함수 선언문
+
+```javascript
+function 함수명(매개변수) {
+  실행문;
+  return 값;
+}
+```
+
+2. 함수 표현식
+
+```javascript
+let test = function (매개변수) {
+  실행문;
+  return 값;
+};
+```
+
+- ES6에서는 화살표 함수 사용이 가능하다.
+
+```javascript
+//예제 1
+let call = (a, b) => {
+  console.log(a + b);
+};
+
+//예제 2
+let call2 = (a) => {
+  return a;
+};
+//parameter가 한개이면 소괄호() 생략이 가능하다.
+
+//예제 3
+let call2 = (a) => a;
+//return하는 문장만 실행문에 있으면 중괄호{}와 함께 return은 반드시 생략해야 한다.
+```
+
+3. 즉시실행(익명함수)
+
+```javascript
+(function (param) {
+  console.log(`${praram} run~~~ `);
+})(`test`);
+```
+
+### 다양한 함수 구조
+
+1. 중첩함수
+
+```javascript
+function outer(a, b) {
+  let result = inner(a, b);
+  function inner(a, b) {
+    return a + b;
+  }
+  return result;
+}
+
+console.log(outer(10, 3));
+```
+
+2. 콜백함수
+
+- 다른 함수의 인수로 사용되는 함수
+- 어떤 이벤트에 의해 호출되는 함수
+- btn.onclick=function(){} : 버튼이라는 곳에서 클릭이라는 이벤트가 발생되어 호출되었을 때
+
+```javascript
+function callback(a, b) {
+  return a + b;
+}
+
+function getNumber(callFunc) {
+  console.log(`==: ${callFunc}`);
+  let result = callFunc(1, 0);
+  return result;
+}
+
+console.log(getNumber(callback));
+```
+
+3. 클로저(closure)
+
+- 중첩함수는 outer(외부)함수가 끝나면 외부에서 outer(외부)함수의 자원을 사용할 수 없다.
+- 클로저는 outer(외부) 함수보다 중첩 함수가 더 오래 유지되는 경우 중첩 함수는 이미 생명주기가 종료한 외부함수의 변수를 참조할 수 있다. <br>이러한 중첩함수가 클로저(closure)이다.
+- 클로저는 변수가 의도치 않게 변경되지 않도록 안전하게 은닉(information hiding)하고 특정 함수에게만 상태 변경을 허용하여 <br> 상태를 안전하게 변경하고 유지하기 위해 사용한다.
+
+```javascript
+function outerFun() {
+  let sum = 50;
+  function innerFun(a) {
+    return sum + a;
+  }
+  return innerFun;
+}
+```
+
+4. 재귀
+
+```javascript
+function testA() {
+  //실행 1번
+  console.log(`testA before`); //출력 1번
+  testB(); //실행 2번
+  console.log(`testA after`); //출력 5번
+}
+function testB() {
+  console.log(`testB before`); //출력 2번
+  testC(); //실행 3번
+  console.log(`testB after`); //출력 4번
+}
+function testC() {
+  console.log(`testC`); //출력 3번
+}
+testA();
+
+/* 출력결과
+testA before
+testB before
+testC
+testB after
+testA after
+*/
+```
+
+5. 함수 파라미터
+
+```javascript
+function display(a, b) {
+  console.log(`a=${a}, b=${b}`);
+}
+
+display(1, 2); //a=1, b=2
+display(1); //a=1, b=undefined
+display(1, 2, 3, 4, 5); //a=1, b=2
+
+//기본 파라미터(default parameter)
+function display2(a = 0, b = 0) {
+  console.log(`a=${a}, b=${b}`);
+}
+display2(1, 2); //a=1, b=2
+display2(1); //a=1, b=0
+display2(1, 2, 3, 4, 5); //a=1, b=2
+
+//나머지 파라미터(Rest parameter)
+// - 파라미터 갯수를 가변으로 사용할 수 있도록 제공해주는 연산자이다.
+// - spread operator(점 3개(...))를 맨 마지막 파라미터로 사용해줌
+
+// spread operator를 단독으로 사용
+function display3(...args) {
+  console.log(args);
+  console.log(typeof args, args instanceof Array);
+}
+display3(1, 2);
+display3(1);
+display3(1, 2, 3, 4, 5);
+
+//spread operator를 고정 파라미터와 같이 사용 할때는 맨 마지막에 사용
+function display4(num, ...args) {
+  console.log(num);
+  console.log(args);
+}
+display4(1, 2); //1 [ 2 ]
+display4(1); // 1 []
+display4(1, 2, 3, 4, 5); //1 [ 2, 3, 4, 5 ]
+```
+
+5. arguments 객체
+
+- 함수 안에서만 기본으로 사용할 수 있는 자바스크립트 객체이다.
+- 함수 런타임 시점에 자동으로 생성되는 객체이며, 함수 코드 및 파라미터는 무관하게 자동 생성된다.
+- 함수 호출할때 함수로 전달된 실제 인자들의 정보를 담고 있는 객체이다.
+- 함수 선언에서 파라미터로 정의한 변수 갯수보다 실제 함수 호출할때 전달하는 인수의 갯수가 다를 수 있는 자바스크립트의 특성을 <br>고려해 만들어진 객체이다.
+
+  - 참조> https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/arguments
+
+```javascript
+function display5() {
+  let result = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    console.log(typeof arguments, arguments instanceof Array, arguments.callee);
+    console.log(arguments[i]);
+  }
+}
+display5(1, 2);
+
+//arguments instanceof Array : arguments 의 타입이 Array 가 맞는지 물어봄. (true or false)
+//arguments.callee : 현재 실행되는 함수를 물어봄. [Function: display5]
+```
+
+---
+
+20220921 js024_function.js 까지완료
