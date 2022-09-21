@@ -24,8 +24,9 @@ function process(arr, index) {
   return arr[index];
 }
 
+console.log();
 //주어진 arr배열에서 3의 배수의 갯수를 리턴하는  함수 정의2
-console.log(`==========================`);
+console.log(`--------------------------`);
 console.log(`주어진 arr배열에서 3의 배수의 갯수를 리턴하는  함수 정의2`);
 //////////////////////////
 
@@ -38,9 +39,10 @@ function count(process) {
   }
   return cnt;
 }
+
 console.log(`${count(arr)}`);
 //주어진 arr배열에서 3의 배수 합을 리턴하는 함수 정의3
-console.log(`==========================`);
+console.log(`--------------------------`);
 console.log(`주어진 arr배열에서 3의 배수 합을 리턴하는 함수 정의3`);
 ///////////////////////////////
 
@@ -48,6 +50,7 @@ function arrPlus(process) {
   return 0;
 }
 
+console.log();
 ///////////////////////////////////////
 console.log(`==========================`);
 /*
@@ -69,11 +72,11 @@ function reverse(alpa) {
   for (let i = alpa.length - 1; i >= 0; i--) {
     reverse(...alpa[i]);
   }
-  return alpa;
+  return;
 }
 console.log();
 //data배열의 출력하는  함수 정의
-console.log(`==========================`);
+console.log(`--------------------------`);
 console.log(`data배열의 출력하는  함수 정의`);
 //////////////////////////
 
@@ -81,8 +84,8 @@ function display(data) {
   for (let element of alpa) {
     console.log(element);
   }
-  return data;
+  return;
 }
-console.log(`${data}`);
+console.log();
 /////////////////////////
 console.log(`==========================`);
