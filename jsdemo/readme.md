@@ -564,3 +564,7 @@ for (let i = 1; i <= 3; i++) {
   process.stderr.write(`\n`);
 }
 ```
+
+---
+
+20220920 js019_while.js 까지완료
