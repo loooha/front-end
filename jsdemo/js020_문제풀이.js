@@ -3,14 +3,21 @@
   num변수의 값이 10의 배수이면 1을 아니면 0을 
    리턴하는 프로그램을 구현하시오.
   [실행결과]
-   1
+   0 or 1
  */
+console.log(`[문제1]`);
+
+let num = 11;
+let bit = num % 10 == 0 ? 1 : 0;
+console.log(bit);
+
+/* 
 let num = -10;
-if (num % 10 == 0) {
+if (num % 10 === 0) {
   console.log(`1`);
 } else {
   console.log(`0`);
-}
+}*/
 
 console.log(`==========================`);
 /*
@@ -22,53 +29,63 @@ console.log(`==========================`);
    3  [실행결과]
        필요한 바구니의 수 : 13
     */
-for (let apple = 0; apple <= 123; apple++) {
-  for (let basket = 0; 10 * apple == basket; basket++) {
-    console.log(`필요한 바구니의 수: ${basket}`);
-  }
-}
+console.log(`[문제2]`);
 
-/*let apple = 123;
+let numOfApple = 123; //사과의 수
+let sizeOfBucket = 10; //하나의 바구니에 담은 사과 수
+let numOfBucket; //필요한 바구니 수
+
+numOfBucket =
+  numOfApple % sizeOfBucket == 0
+    ? parseInt(numOfApple / sizeOfBucket)
+    : parseInt(numOfApple / sizeOfBucket) + 1;
+console.log(`필요한 바구니의 수: ${numOfBucket}`);
+/*
+let apple = 123;
+let basket = ``;
 switch (apple / 10) {
   case 1:
-    console.log(`1`);
+    basket = `1`;
+    break;
   case 2:
-    console.log(`2`);
+    basket = `2`;
     break;
   case 3:
-    console.log(`3`);
+    basket = `3`;
     break;
   case 4:
-    console.log(`4`);
+    basket = `4`;
     break;
   case 5:
-    console.log(`5`);
+    basket = `5`;
     break;
   case 6:
-    console.log(`6`);
+    basket = `6`;
     break;
   case 7:
-    console.log(`7`);
+    basket = `7`;
     break;
   case 8:
-    console.log(`8`);
+    basket = `8`;
     break;
   case 9:
-    console.log(`9`);
+    basket = `9`;
     break;
   case 10:
-    console.log(`10`);
+    basket = `10`;
     break;
   case 11:
-    console.log(`11`);
+    basket = `11`;
     break;
   case 12:
-    console.log(`12`);
+    basket = `12`;
     break;
   default:
-    console.log(`13`);
+    basket = `13`;
     break;
-}*/
+}
+console.log(`필요한 바구니의 수: ${basket}`);
+*/
 
 console.log(`==========================`);
 /*
@@ -87,30 +104,34 @@ console.log(`==========================`);
             차량번호의 끝자리가 5인 차량은 금요일 운행을 제한합니다.
      
     */
-let car = 5;
-let week = ``;
-switch (car % 5) {
+console.log(`[문제3]`);
+
+let carNumber = 5;
+let day = ``;
+switch (carNumber % 5) {
   case 1:
   case 6:
-    week = `월요일`;
+    day = `월요일`;
     break;
   case 2:
   case 7:
-    week = `화요일`;
+    day = `화요일`;
     break;
   case 3:
   case 8:
-    week = `수요일`;
+    day = `수요일`;
     break;
   case 4:
   case 9:
-    week = `목요일`;
+    day = `목요일`;
     break;
   case 5:
   case 0:
-    week = `금요일`;
+    day = `금요일`;
 }
-console.log(`차량번호의 끝자리가 ${car}인 차량은 ${week} 운행을 제한합니다.`);
+console.log(
+  `차량번호의 끝자리가 ${carNumber}인 차량은 ${day} 운행을 제한합니다.`
+);
 
 console.log(`==========================`);
 /*
@@ -125,6 +146,18 @@ console.log(`==========================`);
      2008
      2012
     */
+console.log(`[문제4]`);
+
+//let year = 2012;
+for (let year = 2001; year <= 2012; year++) {
+  let leapYearCheck = (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+  //let yearData = leapYearCheck ? `윤년` : `평년`;
+  if (leapYearCheck) {
+    console.log(`${year}년도는 윤년입니다.`);
+  }
+}
+
+/*
 for (let year = 2001; year <= 2012; year++) {
   if (year % 4 === 0 && year % 100 !== 0) {
     console.log(`${year}`);
@@ -133,6 +166,7 @@ for (let year = 2001; year <= 2012; year++) {
     }
   }
 }
+*/
 
 console.log(`==========================`);
 /*  
@@ -144,10 +178,13 @@ console.log(`==========================`);
     *  x=2, y=2
     *  x=5, y=0
     */
+console.log(`[문제5]`);
+
 for (let x = 0; x <= 10; x++) {
   for (let y = 0; y <= 10; y++) {
     if (2 * x + 3 * y === 10) {
-      console.log(`x=${x}, y=${y}`);
+      //console.log(`x=${x}, y=${y}`);
+      process.stderr.write(`x=${x}, y=${y}\n`);
     }
   }
 }

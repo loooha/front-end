@@ -327,7 +327,7 @@ console.log(`data=${data}`);
 
 1. 조건문 : if~else
 2. 선택문 : swich ~case
-3. 반복문 : for, while
+3. 반복문 : for, while, do~while, for~in, for~of
 
 ### 조건문
 
@@ -466,9 +466,12 @@ console.log(`${year}년도의 태생은 ${animal}띠입니다.`);
 : for문은 조건식을 만족할 때까지 특정 실행문을 반복해서 실행한다. <br>
 : for <br>
 : while <br>
+: do~while <br>
+: for~in <br>
+: for~of <br>
 : 중첩반복문 - 반복문 안에 반복문 사용도 가능하다.
 
-- continue : 반복문에서 continue를 만나면 조건식으로 이동한다.  
+- continue : 반복문에서 continue를 만나면 증감식으로 이동한다. (아래의 실행문은 무시)
   continue 문은 현재 또는 레이블이 지정된 루프의 현재 반복에서 명령문의 실행을 종료하고 반복문의 처음으로 돌아가여 루프문의 다음 코드를 실행합니다.
 - lable : 사용할 반복문 앞에 선언하여 반복문을 바로 끝냅니다.
 

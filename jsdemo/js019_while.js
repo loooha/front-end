@@ -17,6 +17,17 @@ while (j <= 5) {
   j++;
 }
 
+/*
+while 문은 조건식을 생략할 수 없다.
+while(조건식){
+  console.log(`test`);
+}
+
+while(true){ //조건식을 생략할 수 없기때문에 조건식안에 true 혹은 1을 넣기도 한다.
+  console.log(`test`);
+}
+*/
+
 //한번도 실행이 안될 수 있음
 for (let i = 3; i <= 1; i++) {
   console.log(i);
