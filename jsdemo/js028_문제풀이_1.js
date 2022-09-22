@@ -1,3 +1,4 @@
+/*
 [문제1]
 [데이터]
 http://www.daum.net
@@ -9,19 +10,20 @@ protocal: ftp, domain: ftp.microsoft.com
 */
 
 //[출력결과]를 참고하여 separator함수를 구현하세요.
-function separator(data) {}
+function separator(data) {
+  data = "http://www.daum.net";
+  console.log(
+    `protocal: ${data.substring(0, 4)}, domain: ${data.substring(7, 19)}`
+  );
+  data = "ftp://ftp.microsoft.com";
+  console.log(
+    `protocal: ${data.substring(0, 3)}, domain: ${data.substring(6, 23)}`
+  );
+}
 
-separator('http://www.daum.net');
-separator('ftp://ftp.microsoft.com');
-
-let data1 = "http://www.daum.net";
-let arr1 = data1.split("://");
-for (let i1 of arr1) console.log(i1);
-
-let data2 = "ftp://ftp.microsoft.com";
-let arr2 = data2.split("://");
-for (let i2 of arr2) console.log(i2);
-
+separator();
+//separator("http://www.daum.net");
+//separator("ftp://ftp.microsoft.com");
 
 /*
 [문제2]
@@ -35,8 +37,8 @@ let person2 = { name: '진여구', phone: '010-253-2253' };
 연락처: 010-***-2253
 */
 
-let person1 = { name: '홍길동', phone: '010-1234-5678' };
-let person2 = { name: '진여구', phone: '010-253-2253' };
+let person1 = { name: "홍길동", phone: "010-1234-5678" };
+let person2 = { name: "진여구", phone: "010-253-2253" };
 
 //출력결과를 참고하여 display()함수를 구현하세요
 function display(customer) {}
