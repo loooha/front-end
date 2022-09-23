@@ -124,12 +124,24 @@ console.log(completedHabits);
 //예제
 //member변수에서 데이터를 추출하여 '고수 고객님은 서울에 거주합니다.' 라고 출력하세요.
 let member = {
-  name: "고수",
+  hname: "고수",
   address: {
     zipCode: "526-143",
     city: "서울",
   },
 };
-let name = member.name;
-let city = member.address.city;
-console.log(`${name} 고객님은 ${city}에 거주합니다.`);
+//let hname = member.name;
+//let city = member.address.city;
+//console.log(`${hname} 고객님은 ${city}에 거주합니다.`);
+
+// let { hname, address } = member;
+// let { city } = address;
+// console.log(`${hname} 고객님은 ${city}에 거주합니다.`);
+
+({
+  hname,
+  address: { city },
+} = member);
+console.log(`${hname} 고객님은 ${city}에 거주합니다.`);
+
+//고수 고객님은 서울에 거주합니다.
