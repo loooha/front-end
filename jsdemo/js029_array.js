@@ -152,6 +152,8 @@ function getSum(total, num) {
 const sum = number.reduce(getSum);
 console.log(`sum: ${sum}`); //sum: 54
 
+//
+
 const ages = [32, 33, 16, 40];
 const per = ages.filter(function (element, index) {
   return element >= 18;
