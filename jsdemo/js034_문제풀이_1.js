@@ -9,9 +9,22 @@ let arr = [1, 2, 3, undefined, 4, undefined, undefined, 5];
 합계: 15
 평균: 3
 
-hint: undefined 값을 포함하여 평균을 내는 방법도 있지만,
+Hint: undefined 값을 포함하여 평균을 내는 방법도 있지만,
        이번 문제에서는 undefined 값은 빼고 있는 값들로만 계산
 */
+let arr = [1, 2, 3, undefined, 4, undefined, undefined, 5];
+
+let newArr = arr.filter(function (element, i) {
+  return element !== undefined;
+});
+
+let result = newArr.reduce(function add(total, num) {
+  return total + num;
+});
+let average = result / newArr.length;
+
+console.log(`합계: ${result}`);
+console.log(`평균: ${average}`);
 
 /*
  [문제2] 
