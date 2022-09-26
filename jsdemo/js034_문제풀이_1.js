@@ -14,17 +14,16 @@ Hint: undefined 값을 포함하여 평균을 내는 방법도 있지만,
 */
 let arr = [1, 2, 3, undefined, 4, undefined, undefined, 5];
 
-let newArr = arr.filter(function (element, i) {
+let result = arr.filter(function (element) {
   return element !== undefined;
 });
 
-let result = newArr.reduce(function add(total, num) {
-  return total + num;
+let sum = result.reduce(function add(total, element) {
+  return total + element;
 });
-let average = result / newArr.length;
 
-console.log(`합계: ${result}`);
-console.log(`평균: ${average}`);
+console.log(`합계: ${sum}`);
+console.log(`평균: ${sum / result.length}`);
 
 /*
  [문제2] 
@@ -41,3 +40,26 @@ console.log(`평균: ${average}`);
 
   Hint: 평균에서 최고점만 구하면 됨. 누가 최고점인지는 중요하지 않음!
 */
+
+let exam = [
+  ["홍길동", 90, 85, 40],
+  ["이영희", 100, 35, 75],
+];
+
+for (let i = 0; i < exam.length; i++) {
+  let fullName, jumsu;
+  [fullName, ...jumsu] = exam[i];
+  let hap = jumsu.reduce(function (total, element) {
+    return total + element;
+  });
+  exam[i].push(hap);
+  exam[i].push((hap / jumsu.length).toFixed(2));
+}
+
+console.log(exam);
+
+let lastEle = exam.map((element) => {
+  return element[element.length - 1];
+});
+
+console.log(`최고점: ${Math.max(...lastEle)}`);
