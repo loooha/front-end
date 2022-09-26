@@ -798,3 +798,7 @@ display5(1, 2);
 ---
 
 20220921 js024_function.js 까지완료
+
+---
+
+<img src=".\img\D2naver.png">

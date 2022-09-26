@@ -77,3 +77,11 @@ console.log(aAttrNode); //images/gosu.jpg
 
 aAttrNode = aNode.src;
 console.log(aAttrNode); //http://127.0.0.1:5500/images/gosu.jpg
+
+//
+//속성을 지정할 때
+aNode.setAttribute("title", "스타배우"); //개체.속성명 = 값; 으로 속성값을 줄수있음
+console.log(aNode.getAttribute("title")); //스타배우
+
+aNode.id = "imgGosu"; //개체.속성명 = 값; 으로 속성값을 줄수있음
+console.log(aNode.id); //imgGosu //개체.속성명 으로 속성값을 가져올 수 있음
