@@ -14,3 +14,9 @@ console.log(date.getMonth() + 1); //월 - 월은 지난 월을 가져오기때�
 console.log(date.getDate()); //26  //일
 
 console.log(date.getDay()); //요일 //0일요일 1월요일 2화 3수 4목 5금 6토
+
+console.log(date.getHours());
+
+console.log(date.getMinutes());
+
+console.log(date.getSeconds());

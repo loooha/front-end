@@ -1,22 +1,19 @@
 //
 
 let date = new Date();
-console.log(date);
 
-///
+let chk = true;
+let btn = document.getElementsByTagName("button")[0];
+btn.onclick = process;
 
-document.log_f.onsubmit = () => {
-  let idNode = document.querySelector("#my_id");
-  let passNode = document.querySelector("#my_pass");
-
-  if (idNode.value == "") {
-    alert("아이디를 입력하세요");
-    return false;
+function process() {
+  document.getElementsByTagName("p")[0];
+  if (chk) {
+    document.write(
+      `${date.getFullYear()}-${
+        date.getMonth() + 1
+      }-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+    );
+    chk = true;
   }
-  if (passNode.value == "") {
-    alert("비밀번호를 입력하세요");
-    return false;
-  }
-};
-
-//
+}
