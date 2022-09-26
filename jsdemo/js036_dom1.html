@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My title</title>
+    <script defer src="./js036_dom.js"></script>
+    <style>
+      /* p:nth-of-type(1) {
+        background-color: yellow;
+      } */
+    </style>
+  </head>
+  <body>
+    <h1 id="selector" class="choice">선택자</h1>
+    <!-- <script>
+      let hNode = document.getElementById("selector");
+      console.log(hNode);
+    </script> 
+    스크립트가 처리되는 순서가 달라서 
+    1. 헤드부분 스크립트에 defer를 넣거나, 
+    2/ 스크립트에 windiw.onload = function (){} 을 넣거나,
+    3. html 태그 아래에 스크립트를 선언함.
+    현재는 헤드부분에 defer 더 선호함
+    -->
+
+    <p>content1</p>
+    <p>content2</p>
+    <p>content3</p>
+    <p>content4</p>
+
+    <form name="frm" action="#">
+      <input type="text" name="fname" placeholder="이름입력" value="홍길동" />
+      <input type="text" name="fpass" placeholder="비밀번호 입력" />
+      <button onclick="return process()">click</button>
+    </form>
+  </body>
+</html>
