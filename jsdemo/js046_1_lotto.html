@@ -21,12 +21,12 @@
   </head>
   <body>
     <div class="wrap">
-      <div>10</div>
-      <div>20</div>
-      <div>30</div>
-      <div>40</div>
-      <div>50</div>
-      <div>60</div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
     </div>
     <!-- <script>
       /* 0.0이상 ~ 1.0미만*/
@@ -34,10 +34,7 @@
       console.log(ran);
     </script> -->
 
-    <script>
-      let ball = document.querySelector(".wrap>div");
-      console.log(ball);
-
+    <!-- <script>
       let list = [];
       for (let i = 1; i <= 45; i++) {
         list.push(i);
@@ -50,8 +47,20 @@
         result.push(num);
       }
       for (let i = 0; i < 6; i++) {
-        document.write(result[i]);
+        document.write('<div class="ball">' + result[i] + '<div class="ball">');
       }
+    </script> -->
+
+    <script>
+      var lotto = [];
+      while (lotto.length < 6) {
+        var num = parseInt(Math.random() * 45 + 1);
+        if (lotto.indexOf(num) == -1) {
+          lotto.push(num);
+        }
+      }
+      lotto.sort((a, b) => a - b);
+      document.write(lotto);
     </script>
   </body>
 </html>
