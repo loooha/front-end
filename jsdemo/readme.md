@@ -801,4 +801,10 @@ display5(1, 2);
 
 ---
 
-<img src=".\img\D2naver.png">
+## <img src=".\img\D2naver.png">
+
+---
+
+### Bubbling / Capturing
+
+<img src="./img/propagation.png">
