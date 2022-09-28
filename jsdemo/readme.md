@@ -808,3 +808,9 @@ display5(1, 2);
 ### Bubbling / Capturing
 
 <img src="./img/propagation.png">
+
+---
+
+### 비동기
+
+<img src="./img/setTimeout.png">
