@@ -4,19 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>jquery005_event.html</title>
+    <title>jquery011_this.html</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script>
       $(document).ready(function () {
-        //on('이벤트', 콜백함수)
-        // $("button").on("click", function () {
-        //   alert("event call");
-        // });
-
-        //이벤트함수(콜백함수); click(콜백함수);
         $("button").click(function () {
-          alert("event test");
+          document.write(this + "," + $(this) + "<br/>");
+          //javascript [object HTMLButtonElement] //jQuery [object Object]
+
+          document.write(this.parentNode.nodeName + "<br/>"); //부모요소 가져오기 //BODY //javascript
+          document.write($(this).parent()[0].nodeName + "<br/>"); //부모요소 가져오기 //BODY //jQuery
         });
       });
     </script>
