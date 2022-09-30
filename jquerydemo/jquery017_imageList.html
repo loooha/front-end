@@ -57,6 +57,11 @@
           //$("p input").prop("checked", this.checked);
           $("p input").prop("checked", $(this).prop("checked"));
         });
+
+        //삭제
+        $("button").click(function () {
+          $("p input:checked").parents("li").remove();
+        });
       });
     </script>
   </head>
